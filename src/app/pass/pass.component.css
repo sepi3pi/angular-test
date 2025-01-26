@@ -1,0 +1,10 @@
+
+
+::ng-deep .mat-mdc-card{
+  background-color: rgb(39, 36, 36) !important;
+
+}
+::ng-deep  mat-input {
+  background-color: rgb(51, 48, 48) !important;
+}
+

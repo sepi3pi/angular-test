@@ -1,0 +1,54 @@
+
+<div class="flex justify-center items-center h-screen bg-gray-900">
+  <mat-card class=" bg-slate-500-800 text-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+
+    <div class="flex justify-end items-center mb-6">
+
+      <h2 mat-card-title class="text-xl font-bold">ارسال کد تایید</h2>
+
+    </div>
+
+<p class="flex justify-end row-auto ">
+  <a href="javascript:void(0)" (click)="changeEmail()" style="color: #60a5fa; text-decoration: underline;">  تغییر  </a>
+  کد تایید به ایمیل ارسال شده
+</p>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <!-- کاستوم کردن mat-form-field -->
+
+  <mat-form-field appearance="outline" class="w-full h-14 rounded-xl" style="background-color:rgb(49, 47, 47);">
+    <input matInput formControlName="name" placeholder =" کد تایید را وارد کنید" class="text-right" style="color: rgb(255, 255, 255);">
+    <mat-error *ngif="myForm.get('name').hasError('maxlength')">کد تایید نباید بیشتر از 5 کاراکتر باشد</mat-error>
+  </mat-form-field>
+</form>
+
+<div *ngIf="isLink === 'start' " class="">
+
+  <p  mat-line style="text-align: center; font-size: 14px; margin-top: 16px;">
+    اعتبار کد تا
+    <span style="color: #60a5fa; font-weight: bold;">{{ countdown }}</span>
+
+    ثانیه دیگر
+  </p>
+</div>
+
+<div *ngIf="isLink === 'end'">
+  <button
+    class="text-blue-400 hover:text-gray-300 text-sm bg-transparent"
+    (click)="resendCode()"
+  >
+    دریافت مجدد کد
+  </button>
+</div>
+
+ <button mat-basic-button="rounded-lg"
+ class=" w-full py-3 rounded-lg font-semibold transition"
+ style=" background: #60a5fa ;"
+ type="submit"
+ >
+        ثبت نام
+    </button>
+
+  </mat-card>
+</div>
+
