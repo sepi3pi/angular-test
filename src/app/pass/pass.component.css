@@ -8,3 +8,7 @@
   background-color: rgb(51, 48, 48) !important;
 }
 
+
+ ::ng-deep .mat-mdc-text{
+  background-color: aqua;
+ }
